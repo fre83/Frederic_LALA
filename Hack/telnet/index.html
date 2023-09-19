@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>telnet - Mes docs en vrac ( et en cours )</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Mes docs en vrac ( et en cours )</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hack <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../nmap/" class="dropdown-item">NMAP</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">telnet</a>
+</li>
+                                    
+<li>
+    <a href="../transfert%20de%20fichier/" class="dropdown-item">Le transfert de fichier</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">IOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../IOS/commande_ios/" class="dropdown-item">Commande ios</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python3 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Python3/python/" class="dropdown-item">python</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../nmap/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../transfert%20de%20fichier/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#telnet" class="nav-link">telnet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#les-port-et-faille" class="nav-link">Les port et faille</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ftp" class="nav-link">ftp</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#telnet_1" class="nav-link">telnet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#smb" class="nav-link">smb</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#redis" class="nav-link">Redis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="telnet">telnet</h1>
+<h1 id="les-port-et-faille">Les port et faille</h1>
+<h2 id="ftp">ftp</h2>
+<p>Port 21/tcp</p>
+<p>compte "anonymous" = pass aucune importance </p>
+<h2 id="telnet_1">telnet</h2>
+<p>Port 23/tcp</p>
+<h2 id="smb">smb</h2>
+<p>Port 1145/tcp </p>
+<pre><code class="language-sh">
+smbclient -L &lt;hote ou ip &gt;              # Liste des partages SMB
+        -N                              # supprime la demande de mdp 
+        -U &lt;user&gt;                       # fourni un user 
+</code></pre>
+<p>Le client SMB dans un shell Interactive
+smbclient fournit aussi un shell interactif comme certains clients ftp (ncftp, lftp, …).
+Dans ce dernier vous pouvez passer différentes commandes pour effectuer les opérations souhaitées.</p>
+<pre><code class="language-powershell">smbclient -U sambauser &quot;\\10.0.0.43\partagedemo&quot;
+</code></pre>
+<p>Si vous rencontrez l’erreur suivante lors de la connexion SMB :</p>
+<pre><code class="language-powershell">Not enough '\' characters in service
+</code></pre>
+<p>Triplez l’antislash pour la résoudre, comme ceci :</p>
+<pre><code class="language-powershell">smbclient -U sambauser -L &quot;\\\10.0.0.43\partagedemo&quot;
+</code></pre>
+<h3 id="envoyer-des-fichiers-et-des-dossiers">Envoyer des fichiers et des dossiers</h3>
+<p>Les fichiers et les dossiers peuvent être téléchargés avec la commande mput. Mais afin de télécharger un dossier spécifique et son contenu, le mode récursif doit être activé avec la commande recurse. Le téléchargement peut également être lancé avec la commande mput.</p>
+<blockquote>
+<p>smb: &gt; recurse # Active le mode récursif</p>
+<p>smb: &gt; mput Images # Upload du dossier Images</p>
+<p>smb: &gt; recurse # Désactive le mode récursif</p>
+</blockquote>
+<h3 id="telecharger-des-fichiers-et-des-dossiers">Télécharger des fichiers et des dossiers</h3>
+<p>Les fichiers et les dossiers peuvent également être téléchargés avec la commande mget. S’il y a plusieurs fichiers et dossiers à télécharger, le mode récursif doit être activé avec la commande recurse.</p>
+<blockquote>
+<p>smb: &gt; recurse</p>
+<p>smb: &gt; mget Images</p>
+<p>smb: &gt; recurse</p>
+</blockquote>
+<h3 id="liste-des-attributs-des-fichiers-et-des-dossiers">Liste des attributs des fichiers et des dossiers</h3>
+<blockquote>
+<p>smb: &gt; allinfo monfichier.txt</p>
+</blockquote>
+<h2 id="redis">Redis</h2>
+<p>Rédis (de l'anglais REmote DIctionary Server qui peut être traduit par « serveur de dictionnaire distant » et jeu de mots avec Redistribute ) est un magasin de données clé-valeur NoSQL avancé open source utilisé comme base de données, 
+cache et courtier de messages. Les données sont stockées dans un format de dictionnaire ayant des paires clé-valeur. Il est généralement utilisé 
+pour le stockage à court terme de données nécessitant une récupération rapide. Redis sauvegarde les données sur les disques durs pour assurer 
+la cohérence</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

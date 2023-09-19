@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Commande ios - Mes docs en vrac ( et en cours )</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Mes docs en vrac ( et en cours )</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hack <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Hack/nmap/" class="dropdown-item">NMAP</a>
+</li>
+                                    
+<li>
+    <a href="../../Hack/telnet/" class="dropdown-item">telnet</a>
+</li>
+                                    
+<li>
+    <a href="../../Hack/transfert%20de%20fichier/" class="dropdown-item">Le transfert de fichier</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">IOS <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Commande ios</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python3 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Python3/python/" class="dropdown-item">python</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Hack/transfert%20de%20fichier/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../Python3/python/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#commande-ios" class="nav-link">Commande ios</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#commande-de-base" class="nav-link">Commande de base</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#configuration-de-port-et-ip-commande-switchport" class="nav-link">Configuration de port et ip ( Commande switchport )</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#configurer-lip-et-adress-mask-gateway" class="nav-link">Configurer l'ip et adress mask gateway</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#vlan-trunk-ssh" class="nav-link">Vlan trunk ssh</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#creer-et-nommer-des-vlans" class="nav-link">Créer et nommer des vlans</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#assignez-des-vlans-a-un-port-actif" class="nav-link">Assignez des vlans a un port actif</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#assignez-le-voice-vlan-a-un-port-actif" class="nav-link">Assignez le voice vlan a un port actif</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#configure-trunks" class="nav-link">Configure trunks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#ssh" class="nav-link">SSH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="commande-ios">Commande ios</h1>
+<h2 id="commande-de-base">Commande de base</h2>
+<pre><code class="language-IOS">!--- commentaire                                    # commentaire cisco 
+router&gt;?                                            # aide
+router&gt;                                             # utilisateur
+router&gt; enable                                      # accès root
+router# configuration                               # acces configuration globale
+router&gt;exit ou end                                  # retour en arrière
+router(config)#ip domain-name CCNA.com              # changé nom de domaine (sensible à la casse pour la notation dans PT)
+router(config)# no ip domain-lookup                 # désactiver la recherche dns 
+show run | include default-gateway                  # afficher gateway 
+
+!--- Rename le nom du switch ou server 
+router(config)#hostname (hostname)                  # assigner un hostname
+router(config)#no hostname (hostname)               # supprimer le hostname
+
+!--- Mot de passe et ssh 
+router(config)#username any_user secret any_password # creer user et mot de passe pour ssh 
+router(config)#service password-encryption          # Crypter tous les mots de passe en clair    
+router(config)#security password min-length 10      # Définissez la longueur minimale du mot de passe sur 10
+</code></pre>
+<h4 id="configurer-le-mot-de-passe-de-console-ainsi-que-celui-du-mode-dexecution-privilegie">Configurer le mot de passe de console ainsi que celui du mode d'exécution privilégié.</h4>
+<pre><code class="language-IOS">router(config)# line console 0                      
+router(config-line)# password &quot;cisco&quot;               # Attribuez &quot;cisco&quot; comme mot de passe de console, puis 
+router(config-line)# login                          # activez la connexion
+router(config-line)# exit
+router(config)# enable secret &quot;class&quot;        # Utilisez &quot;class&quot; comme mot de passe pour le mode d'exécution privilégié chiffré.
+</code></pre>
+<h4 id="commande-show">Commande show</h4>
+<pre><code class="language-IOS">router(config)#show vlan [brief | id vlan-id | name vlan-name | summary]
+
+router(config)#show running configuration       # affiche la config du routeur 
+
+router(config)#show arp                         # protocole résolution d'adresse
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  209.165.201.1           -   0060.70B4.A601  ARPA   GigabitEthernet0/0
+
+router(config)#show flash                       # mem flash 
+router(config)#show ip route                    # route 
+router(config)#show interface                   # interface
+router(config)#show version                     # version
+router(config)#show ?                           # aide
+
+
+</code></pre>
+<p><img alt="" src="../capture/23.PNG" /></p>
+<h3 id="configurer-une-banniere-motd-message-of-the-day-ou-message-du-jour">Configurer une bannière MOTD (message of the day, ou message du jour)</h3>
+<p>Dans cette étape, vous allez configurer une bannière MOTD pour afficher un avertissement d'accès non autorisé. Voici un exemple de texte :
+- Accès autorisé uniquement.</p>
+<p>Utilisez la commande banner motd avec le message exemple. Vous pouvez choisir un autre message.</p>
+<pre><code class="language-IOS">router(config)# banner motd &quot;Accès autorisé uniquement.&quot;
+</code></pre>
+<h3 id="enregistrer-le-fichier-de-config">Enregistrer le fichier de config</h3>
+<pre><code class="language-IOS">router(config)#exit                             # quitter le mode root 
+router&gt;copy running-config startup-config
+router&gt;wr 
+</code></pre>
+<h3 id="enregistrer-sur-la-memoire-flash">Enregistrer sur la mémoire flash</h3>
+<p>Sachez qu'en guise de procédure de sauvegarde supplémentaire, vous pouvez enregistrer votre fichier de configuration initiale dans la mémoire Flash. Par défaut, le routeur continue à charger la configuration initiale à partir de la mémoire NVRAM, mais si cette mémoire est endommagée, vous pouvez restaurer la configuration initiale en la copiant à partir de la mémoire Flash.</p>
+<pre><code class="language-IOS">router(config)#copy startup-config flash 
+router(config)#copy startup-config flash
+</code></pre>
+<h2 id="configuration-de-port-et-ip-commande-switchport">Configuration de port et ip ( Commande switchport )</h2>
+<h3 id="configurez-un-port-securise">Configurez un port sécurisé</h3>
+<p>Accédez à la ligne de commande pour server et activez la sécurité des ports sur les ports Fast Ethernet 0/1 et 0/2.</p>
+<blockquote>
+<p>server(config)# interface range fa0/1 - 2</p>
+<p>server(config-if-range)# switchport port-security</p>
+</blockquote>
+<p>Définissez le maximum afin qu'un seul appareil puisse accéder aux ports Fast Ethernet 0/1 et 0/2.</p>
+<blockquote>
+<p>server(config-if-range)# switchport port-security maximum 1</p>
+</blockquote>
+<p>Sécurisez les ports afin que l'adresse MAC d'un périphérique soit dynamiquement apprise et ajoutée au réseau en cours d'exécution.
+configuration.</p>
+<blockquote>
+<p>server(config-if-range)# switchport port-security mac-address sticky</p>
+</blockquote>
+<p>Définissez la violation de sorte que les ports Fast Ethernet 0/1 et 0/2 ne soient pas désactivés lorsqu'une violation se produit, mais
+une notification de la violation de sécurité est générée et les paquets provenant de la source inconnue sont supprimés.</p>
+<blockquote>
+<p>server(config-if-range)# switchport port-security violation restrict</p>
+</blockquote>
+<p>Désactivez tous les ports inutilisés restants. Astuce : utilisez le mot-clé range pour appliquer cette configuration à tous les
+ports simultanément.</p>
+<blockquote>
+<p>server(config-if-range)# interface range fa0/3 - 24 , gi0/1 - 2</p>
+<p>server(config-if-range)# shutdown</p>
+</blockquote>
+<h3 id="mode-de-port-securise">mode de port sécurisé</h3>
+<blockquote>
+<p>(config-if)#switchport port-security violation {protect | restrict | shutdown}</p>
+</blockquote>
+<ul>
+<li>Mode protect : dès que la “violation” est constatée, le port arrête de transférer le trafic des adresses non autorisées sans envoyer de message de log.</li>
+<li>Mode restrict : dès que la “violation” est constatée, le port arrête de transférer le trafic des adresses non autorisées et transmet un message de log.</li>
+<li>Mode shutdown : dès que la “violation” est constatée, le port passe en état err-disabled (shutdown) et un message de log est envoyé.</li>
+</ul>
+<h3 id="desactiver-tous-les-ports-de-commutateur-inutilises">Désactiver tous les ports de commutateur inutilisés</h3>
+<p>non utilisé f0/2 jusqua f0/24 et g0/2</p>
+<pre><code class="language-IOS">SW1(config)# interface range F0/2-24, G0/2
+SW1(config-if-range)# shutdown
+</code></pre>
+<h2 id="configurer-lip-et-adress-mask-gateway">Configurer l'ip et adress mask gateway</h2>
+<pre><code class="language-IOS">router(config)#interface vlan 1
+router(config)# ip address 192.168.1.253 255.255.255.0
+router(config)# no shutdown                         #enable interface
+router(config)# exit
+router# show ip interface brief                     # vérifier changement effectuer 
+
+
+router(config)#ip default-gateway address           # configurer gateway par default 
+router(config)#no default-gateway address
+</code></pre>
+<h1 id="vlan-trunk-ssh">Vlan trunk ssh</h1>
+<h2 id="creer-et-nommer-des-vlans">Créer et nommer des vlans</h2>
+<pre><code class="language-IOS">router(config)#vlan 10
+router(config-vlan)# name (namevlan10)
+router(config)#vlan 15
+router(config-vlan)# name (namevlan15)
+</code></pre>
+<p><img alt="" src="../capture/21.PNG" /> 
+<img alt="" src="../capture/22.PNG" /></p>
+<h2 id="assignez-des-vlans-a-un-port-actif">Assignez des vlans a un port actif</h2>
+<pre><code class="language-IOS">router(config)# interface f0/11
+router(config-if)# switchport mode access
+router(config-if)# switchport access vlan 10
+router(config-if)# switchport access vlan 15
+</code></pre>
+<h2 id="assignez-le-voice-vlan-a-un-port-actif">Assignez le voice vlan a un port actif</h2>
+<pre><code class="language-IOS">router(config)# interface f0/11
+router(config-if)# mls qos trust cos
+router(config-if)# switchport voice vlan 150  # vlan 150 
+</code></pre>
+<h1 id="configure-trunks">Configure trunks</h1>
+<p>Un trunk est une liaison point à point entre deux périphériques 
+réseau.</p>
+<p>Fonctions du trunk :
+• Autoriser plusieurs VLAN sur un port
+• Étendre le VLAN sur l'ensemble du réseau</p>
+<pre><code class="language-IOS">!--- Configurer G0/1 et G0/2 interfaces sur Server pour trunk.
+router(config)# interface range g0/1 - 2
+router(config-if)# switchport mode trunk
+!--- Configure VLAN 99 as the native VLAN for G0/1 and G0/2 interfaces on S1.
+router(config-if)# switchport trunk native vlan 99
+</code></pre>
+<h1 id="ssh">SSH</h1>
+<p>Désactivez la recherche DNS.</p>
+<blockquote>
+<p>server(config)# no ip domain-lookup</p>
+</blockquote>
+<p>Choisir un nom de domaine </p>
+<blockquote>
+<p>router(config)# ip domain-name CCNA.com</p>
+</blockquote>
+<p>creer un user de son choix avec un mot de passe sécurisé </p>
+<blockquote>
+<p>router(config)# username any_user secret any_password</p>
+</blockquote>
+<p>Generer 1024-bit RSA keys.</p>
+<blockquote>
+<p>router(config)# crypto key generate rsa</p>
+<p>How many bits in the modulus [512]: 1024</p>
+</blockquote>
+<p>Bloquez pendant trois minutes toute personne qui ne parvient pas à se connecter après quatre tentatives sur une période de deux minutes.      </p>
+<blockquote>
+<p>router(config)# login block-for 180 attempts 4 within 120</p>
+</blockquote>
+<p>Configurez toutes les lignes VTY pour l'accès SSH et utilisez les profils d'utilisateurs locaux pour l'authentification.</p>
+<blockquote>
+<p>router(config)# line vty 0 4</p>
+<p>router(config-line)# transport input ssh</p>
+<p>router(config-line)# login local</p>
+</blockquote>
+<p>Réglez le délai d'attente du mode EXEC sur 6 minutes sur les lignes VTY.</p>
+<blockquote>
+<p>router(config-line)# exec-timeout 6</p>
+</blockquote>
+<p>Et sauvegarder </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
